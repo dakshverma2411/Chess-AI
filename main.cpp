@@ -198,3 +198,29 @@ int minimax(char * * board,bool max)
     }
 }
 
+bool board_full(char ** board)
+{
+    int count_empty=0;
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            if(board[i][j]==' ')
+            {
+                count_empty++;
+            }
+        }
+    }
+    if(count_empty==0)
+    {
+        return true;
+    }
+    return false;
+}
+
+void find_row_and_column(int x,int &row,int &column)
+{
+    row=x/3;
+    column=x%3;
+}
+
